@@ -63,7 +63,7 @@ while True:
     print("Tim thay {} khuon mat trong anh.".format(len(face_locations)))
     face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)
 
-    face_id = "Guest"
+    face_id = "Hiển"
 
     # Loop over each face found in the frame to see if it's someone we know.
     for face_encoding in face_encodings:
@@ -71,29 +71,38 @@ while True:
         match = face_recognition.compare_faces([rec_face_encoding], face_encoding)
         name = "<Unknown Person>"
 
-        if id_check == 0:
-            for file in os.listdir(
-                "/home/richardmelvin52/MagicMirror/modules/MMM-Face-Recognition-SMAI/public"
-            ):
-                if file.endswith("-id.png"):
-                    face_id = file.replace("-", " ").split(" ")[0]
-                    # print(face_id)
-            id_check = 0
-            # print(face_id) -- print the name you saved as the MM picture
+        # if id_check == 0:
+        #     for file in os.listdir(
+        #         "/home/richardmelvin52/MagicMirror/modules/MMM-Face-Recognition-SMAI/public"
+        #     ):
+        #         if file.endswith("-id.png"):
+        #             face_id = file.replace("-", " ").split(" ")[0]
+        #             # print(face_id)
+        #     id_check = 0
+        #     # print(face_id) -- print the name you saved as the MM picture
 
         if match[0]:
             name = face_id
 
         print("Person Detected: {}!".format(face_id))
         f = open(
-            "/home/pi/MagicMirror/modules/MMM-Face-Recognition-SMAI/sample.txt", "w"
+            "/home/richardmelvin52/MagicMirror/modules/MMM-Face-Recognition-SMAI/sample.txt",
+            "w",
         )
         f.write(name)
         f.close()
+
+        # Hiển thị lời chào
+        if name != "<Unknown Person>":
+            print("Welcome, {}!".format(name))
+
         # time taken before the user is logged off from the mirror
         time.sleep(15)
 
-    f = open("/home/richardmelvin52/MagicMirror/modules/MMM-Face-Recognition-SMAI/sample.txt", "w")
+    f = open(
+        "/home/richardmelvin52/MagicMirror/modules/MMM-Face-Recognition-SMAI/sample.txt",
+        "w",
+    )
     f.write(face_id)
     f.close()
 

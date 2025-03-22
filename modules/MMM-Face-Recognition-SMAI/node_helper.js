@@ -14,7 +14,7 @@ module.exports = NodeHelper.create({
 
   
       var fs = require('fs');
-      fs.readFile("/home/pi/MagicMirror/modules/MMM-Face-Recognition-SMAI/sample.txt", function(err,data)
+      fs.readFile("/home/richardmelvin52/MagicMirror/modules/MMM-Face-Recognition-SMAI/sample.txt", function(err,data)
             {
                 if(err)
                     console.log(err)
@@ -23,7 +23,7 @@ module.exports = NodeHelper.create({
                     console.log(face_rec_name);
             });
   
-      fs.readdir('/home/pi/MagicMirror/modules/MMM-Face-Recognition-SMAI/public/', (err, datadir) => {
+      fs.readdir('/home/richardmelvin52/MagicMirror/modules/MMM-Face-Recognition-SMAI/public/', (err, datadir) => {
         if (err) throw err;
           
           // Try it where we expect a match
