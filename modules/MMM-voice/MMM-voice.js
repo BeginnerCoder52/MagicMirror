@@ -32,6 +32,8 @@
  * @requires external:Log
  * @requires external:MM
  */
+console.log("MMM-voice config:", this.config);
+
 Module.register('MMM-voice', {
 
     /** @member {string} icon - Microphone icon. */

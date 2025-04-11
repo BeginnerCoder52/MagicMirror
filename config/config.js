@@ -65,7 +65,7 @@ let config = {
 					}
 				]
 			},
-			classes: "hien"
+			// classes: "hien"
 		},
 		{
 			module: "compliments",
@@ -78,7 +78,7 @@ let config = {
             			]
         		}
     		},
-			classes: "hien"
+			// classes: "hien"
 		},
 		{
 			module: "weather",
@@ -89,7 +89,7 @@ let config = {
 				lat: 10.7769, //Vĩ độ TPHCM
 				lon: 106.7009 //Kinh độ TPHCM 
 			},
-			classes: "hien"
+			// classes: "hien"
 		},
 		{
 			module: "weather",
@@ -102,7 +102,7 @@ let config = {
 				lon: 106.7009,
                                 units: "metric"
 			},
-			classes: "hien"
+			// classes: "hien"
 		},
 		{
 			module: "newsfeed",
@@ -119,7 +119,7 @@ let config = {
 				broadcastNewsFeeds: true,
 				broadcastNewsUpdates: true
 			},
-			classes: "hien"
+			// classes: "hien"
 		},
 		// {
 		// 	module: "MMM-Face-Recognition-SMAI",
@@ -192,7 +192,7 @@ let config = {
 				slideshowSpeed: 0, // Không tự đổi ảnh
 				randomizeImageOrder: false,
 			},
-			classes: "hien"
+			// classes: "hien"
 		},
 		// {
 		// 	module: "MMM-Text",
@@ -208,10 +208,13 @@ let config = {
 			module: 'MMM-voice',
 			position: 'bottom_bar',
 			config: {
-				microphone: "1,0", // Chỉ định card 1, device 0
-				// debug: true,
+				microphone: 'plughw:Generic_1,0', // Chỉ định card 1, device 0
+				keyword: 'MAGIC MIRROR',
+    			timeout: 15,
+				debug: true,
 				// ... see config options below
-			}
+			},
+			classes: "hien",
 		},
 
 			// {
