@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
 :root {
   --color-text: #999;
   --color-text-dimmed: #666;
@@ -17,6 +18,7 @@
   --gap-body-left: 60px;
   --gap-modules: 30px;
 }
+
 
 html {
   cursor: none;

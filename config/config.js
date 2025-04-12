@@ -50,7 +50,7 @@ let config = {
 		{
 			module: "clock",
 			position: "top_left",
-			classes: "hien"
+			classes: "hien",
 		},
 		{
 			module: "calendar",
@@ -65,7 +65,7 @@ let config = {
 					}
 				]
 			},
-			// classes: "hien"
+			classes: "hien"
 		},
 		{
 			module: "compliments",
@@ -78,7 +78,7 @@ let config = {
             			]
         		}
     		},
-			// classes: "hien"
+			classes: "hien"
 		},
 		{
 			module: "weather",
@@ -89,7 +89,7 @@ let config = {
 				lat: 10.7769, //Vĩ độ TPHCM
 				lon: 106.7009 //Kinh độ TPHCM 
 			},
-			// classes: "hien"
+			classes: "hien"
 		},
 		{
 			module: "weather",
@@ -102,7 +102,7 @@ let config = {
 				lon: 106.7009,
                                 units: "metric"
 			},
-			// classes: "hien"
+			classes: "hien"
 		},
 		{
 			module: "newsfeed",
@@ -119,7 +119,7 @@ let config = {
 				broadcastNewsFeeds: true,
 				broadcastNewsUpdates: true
 			},
-			// classes: "hien"
+			classes: "hien"
 		},
 
 		{
@@ -209,34 +209,6 @@ let config = {
 			},
 			classes: "hien",
 		},
-
-			// {
-			// 	module: 'MMM-Voice-Control',
-			// 	position: 'lower_third', // If you want to see the prompt and recognised speech, omit otherwise
-			// 	config: {
-			// 		// See 'Configuration options' for more information.
-			// 	}
-			// },
-
-			// {
-			// 	module: "MMM-Voice-Commands",
-			// 	config: {
-			// 		debug: false, //Displays end results and errors from annyang in the Log
-			// 		autoStart: true, //Adds annyang commands when it first starts
-			// 		activateCommand: "hello mirror", //Command to active all other commands
-			// 		deactivateCommand: "goodbye mirror", //Command to deactivate all other commands
-			// 		alertHeard: false, //Whether an alert should be shown when annyang hears a phrase (mostly for debug)
-			// 		commands: {
-			// 			"command statement :variable (optional statement)": "SOCKET_NOTIFICATION_NAME",
-			// 			//The payload of the socket notification will be whatever is said in the :variable
-			// 			"command statement *variable": function(param){
-			// 				alert("Whatever is said in the *variable space is given as the "+param);
-			// 				//These function's 'this' are bound to the module's 'this' so you can do stuff like:
-			// 				this.sendNotification("PAGE_SELECT", "2");
-			// 			}
-			// 		}
-			// 	}
-			// },
 	]
 };
 
