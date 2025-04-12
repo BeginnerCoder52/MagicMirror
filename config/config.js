@@ -121,15 +121,6 @@ let config = {
 			},
 			// classes: "hien"
 		},
-		// {
-		// 	module: "MMM-Face-Recognition-SMAI",
-		// 	position: "top_right",
-		// 	config: {
-		// 	  //prompt: "Put in your own text"
-		// 	}
-			
-			
-		//   },
 
 		{
 			module: 'MMM-Face-Reco-DNN',
@@ -142,7 +133,9 @@ let config = {
 				defaultClass: 'default',
 				everyoneClass: 'everyone',
 				alwaysClass: 'always',
-				
+				classes: {
+					"hien": ["clock", "weatherforcast", "newsfeed"]
+				},
 				// Sử dụng Haarcascade cho nhận diện khuôn mặt (phù hợp với OpenCV)
 				cascade: 'modules/MMM-Face-Reco-DNN/model/haarcascade_frontalface_default.xml',
 				method: 'haar',  // Chuyển từ 'dnn' sang 'haar'
