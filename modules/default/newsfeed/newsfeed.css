@@ -1,7 +1,28 @@
+/* ===== Newsfeed Module ===== */
+.newsfeed-list {
+  list-style: none;
+  padding: 0;
+}
+
+.newsfeed-list li {
+  text-align: justify;
+  margin-bottom: 0.5em;
+  color: #ccc;
+}
+
+.newsfeed-list li .title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.newsfeed-list li .description {
+  font-size: 16px;
+  color: #aaaaaa;
+}
+
 iframe.newsfeed-fullarticle {
   width: 100vw;
-
-  /* very large height value to allow scrolling */
   height: 3000px;
   top: 0;
   left: 0;
@@ -12,13 +33,4 @@ iframe.newsfeed-fullarticle {
 .region.bottom.bar.newsfeed-fullarticle {
   bottom: inherit;
   top: -90px;
-}
-
-.newsfeed-list {
-  list-style: none;
-}
-
-.newsfeed-list li {
-  text-align: justify;
-  margin-bottom: 0.5em;
 }

@@ -100,7 +100,7 @@ let config = {
 				type: "forecast",
 				lat: 10.7769,
 				lon: 106.7009,
-                                units: "metric"
+                units: "metric"
 			},
 			classes: "hien"
 		},
@@ -181,34 +181,65 @@ let config = {
 			position: "top_right", // Chỉnh vị trí theo ý muốn
 			config: {
 				fixedImage: true, // Hiển thị 1 ảnh duy nhất
-				imagePaths: ["/home/richardmelvin52/MagicMirror/images"], // Ảnh Hiển
+				imagePaths: ["/home/richardmelvin52/MagicMirror/images/hien-id.jpg"], // Ảnh Hiển
 				slideshowSpeed: 0, // Không tự đổi ảnh
 				randomizeImageOrder: false,
 			},
-			// classes: "hien"
+			classes: "hien"
 		},
-		// {
-		// 	module: "MMM-Text",
-		// 	position: "top_right",
-		// 	config: {
-		// 		text: "Welcome back, Hiển!", 
-		// 		fontSize: "20px",
-		// 		updateInterval: 0, // Không tự động thay đổi
-		// 	}
-		// },
 		
-		  {
+		{
 			module: 'MMM-voice',
 			position: 'bottom_bar',
 			config: {
-				microphone: 'plughw:Generic_1,0', // Chỉ định card 1, device 0
-				keyword: 'MAGIC MIRROR',
-    			timeout: 15,
-				debug: true,
-				// ... see config options below
+			  microphone: 1,
+			  keyword: 'MAGIC MIRROR',
+			  timeout: 15,
+			  commands: {
+				'HELLO MAGIC MIRROR': {
+				  notificationExec: {
+					notification: 'SHOW_ALERT',
+					payload: { message: 'Hello! How can I assist you?', title: 'Magic Mirror' }
+				  }
+				},
+				'SHOW ALL MODULES': {
+				  notificationExec: {
+					notification: 'SHOW_ALL_MODULES'
+				  }
+				},
+				'HIDE ALL MODULES': {
+				  notificationExec: {
+					notification: 'HIDE_ALL_MODULES'
+				  }
+				},
+				'TURN OFF MAGIC MIRROR': {
+				  notificationExec: {
+					notification: 'REMOTE_ACTION',
+					payload: { action: 'SHUTDOWN' }
+				  }
+				}
+			  }
+			  
 			},
-			classes: "hien",
+			classes:"hien",
+		  },
+		  {
+			module: 'MMM-Remote-Control',
+			// uncomment the following line to show the URL of the remote control on the mirror
+			// position: 'bottom_left',
+			// you can hide this module afterwards from the remote control itself
+			config: {
+				customCommand: {},  // Optional, See "Using Custom Commands" below
+				showModuleApiMenu: true, // Optional, Enable the Module Controls menu
+				secureEndpoints: true, // Optional, See API/README.md
+				// uncomment any of the lines below if you're gonna use it
+				// customMenu: "custom_menu.json", // Optional, See "Custom Menu Items" below
+				// apiKey: "", // Optional, See API/README.md for details
+				// classes: {} // Optional, See "Custom Classes" below
+			},
+			classes:"hien"
 		},
+		  
 	]
 };
 
