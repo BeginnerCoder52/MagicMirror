@@ -181,7 +181,7 @@ let config = {
 			position: "top_right", // Chỉnh vị trí theo ý muốn
 			config: {
 				fixedImage: true, // Hiển thị 1 ảnh duy nhất
-				imagePaths: ["/home/richardmelvin52/MagicMirror/images/hien-id.jpg"], // Ảnh Hiển
+				imagePaths: ["/home/richardmelvin52/MagicMirror/modules/MMM-Face-Reco-DNN/images/"], // Ảnh Hiển
 				slideshowSpeed: 0, // Không tự đổi ảnh
 				randomizeImageOrder: false,
 			},
@@ -226,7 +226,7 @@ let config = {
 		  {
 			module: 'MMM-Remote-Control',
 			// uncomment the following line to show the URL of the remote control on the mirror
-			// position: 'bottom_left',
+			position: 'bottom_left',
 			// you can hide this module afterwards from the remote control itself
 			config: {
 				customCommand: {},  // Optional, See "Using Custom Commands" below
@@ -239,7 +239,16 @@ let config = {
 			},
 			classes:"hien"
 		},
-		  
+		{
+			module: 'MMM-BackgroundSlideshow',
+			position: 'fullscreen_below',
+			config: {
+			  imagePaths: ['/home/richardmelvin52/MagicMirror/modules/MMM-BackgroundSlideshow/exampleImages'],
+			  transitionImages: true,
+			  randomizeImageOrder: true
+			},
+			classes: "hien"
+		},  
 	]
 };
 
