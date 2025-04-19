@@ -78,8 +78,25 @@ Module.register("newsfeed", {
 		this.registerFeeds();
 
 		this.isShowingDescription = this.config.showDescription;
-	},
 
+		// Thêm sự kiện chuột để bật/tắt newsfeed
+		const wrapper = document.getElementById("module_" + this.identifier);
+		if (wrapper) {
+			wrapper.addEventListener("click", () => {
+				this.toggleVisibility();
+			});
+		}
+	},
+	toggleVisibility() {
+		const moduleWrapper = document.getElementById("module_" + this.identifier);
+		if (moduleWrapper) {
+			if (moduleWrapper.style.display === "none") {
+				moduleWrapper.style.display = "block";
+			} else {
+				moduleWrapper.style.display = "none";
+			}
+		}
+	},
 	// Override socket notification handler.
 	socketNotificationReceived (notification, payload) {
 		if (notification === "NEWS_ITEMS") {

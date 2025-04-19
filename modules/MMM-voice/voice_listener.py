@@ -23,7 +23,7 @@ rec = KaldiRecognizer(model, samplerate)
 
 print("🎤 Voice listener is running... Say something!")
 
-with sd.RawInputStream(samplerate=samplerate, blocksize=8000, device=device,
+with sd.RawInputStream(samplerate=samplerate, blocksize=4000, device=device,
                        dtype='int16', channels=1, callback=callback):
     while True:
         data = q.get()
@@ -34,16 +34,16 @@ with sd.RawInputStream(samplerate=samplerate, blocksize=8000, device=device,
                 print(f"🗣️ You said: {text}")
 
                 # Map voice to MagicMirror commands
-                if "hello magic mirror" in text:
+                if "hello magic" in text:
                     subprocess.run(["curl", "http://localhost:8080/api/notify", 
                                     "-H", "Content-Type: application/json", 
                                     "-d", '{"notification":"SHOW_ALERT","payload":{"message":"Hello!","title":"Voice"}}'])
 
-                elif "show all modules" in text:
+                elif "show all" in text:
                     subprocess.run(["curl", "http://localhost:8080/api/module/show/all"])
 
-                elif "hide all modules" in text:
+                elif "hide all" in text:
                     subprocess.run(["curl", "http://localhost:8080/api/module/hide/all"])
 
-                elif "turn off magic mirror" in text:
+                elif "turn off" in text:
                     subprocess.run(["curl", "http://localhost:8080/api/remote?action=SHUTDOWN"])
